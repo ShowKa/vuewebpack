@@ -41,7 +41,9 @@ module.exports = {
         test: /\.styl(us)?$/,
         use: ['vue-style-loader', 'css-loader', 'stylus-loader']
       }
-      // run eslint before run
+      // ESLint loader is a pre-loader, it will run before the other loaders
+      // and apply the linting rules before the babel-loader kicks in and
+      // start processing the javascript
       , {
         test: /\.(js|vue)$/,
         use: 'eslint-loader',
